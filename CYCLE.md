@@ -160,6 +160,24 @@ Every invocation runs as one of three ticks:
    are cached and free, but budget the rest — roughly 10-12 credits/day
    across all cycles. If it reports the key missing or the budget exhausted,
    log that and skip; never scrape around it.
+5x. **Grok/X signal scout** (paper-only, operator-enabled): if a candidate is
+   meaningfully driven by live X-native information (public statements, viral
+   claims, breaking narrative, event chatter) and BOTH `PHIL_X_SIGNAL=1` and
+   `XAI_API_KEY` are present, you may run:
+   `python3 core/x_signal.py scout --market-id <id> --question "<q>" \
+     --outcome "<name>" --deadline "<UTC>" --rules "<resolver/source>" \
+     --market-p <mid> --own-p <pre-X-p>`.
+   This is a research input only. It never places trades, never changes policy,
+   and never overrides resolver rules, liquidity, calibration, or risk caps.
+   Form your own estimate first. Record any belief movement in the forecast
+   note as `x_signal:<up|down|mixed|none>`, and let retros compare
+   Grok-assisted rows against ordinary rows. If the tool is disabled, missing a
+   key, over its post cap, or not useful for the market, log that and proceed
+   without it. Do not call it for scheduled econ prints whose answer comes from
+   an official release number; calendars and primary sources beat social
+   chatter there. Use `python3 core/x_signal.py doctor` to check setup without
+   spending and `python3 core/x_signal.py eligible --market-id <id>` to sanity
+   check whether X is a good data surface before a paid request.
 5a. **Mech second opinion** (only when the `mcp__pearl-connect__mech_*`
    tools are present in this session - operator-machine runs with the Pearl
    Connect signer up; cloud cycles skip this step entirely): for candidates

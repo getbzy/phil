@@ -97,6 +97,15 @@ public gamma/CLOB endpoints. The bookmaker-odds benchmark (`core/odds.py`)
 needs an `ODDS_API_KEY` from [the-odds-api.com](https://the-odds-api.com),
 in the environment or in `~/.config/phil/odds-api-key`.
 
+Optional live-narrative research uses xAI's Grok/X Search through
+`core/x_signal.py`. It is paper-only and off by default; set both
+`PHIL_X_SIGNAL=1` and `XAI_API_KEY` for an operator-approved scout request.
+The result is logged to `journal/x-signal-requests.jsonl` for later grading
+against non-Grok forecasts. It cannot place trades or enable real mode. Use
+`python3 core/x_signal.py doctor` to check local setup without spending, and
+`python3 core/x_signal.py eligible --market-id <id>` to classify whether X is
+likely useful for that market before making a paid scout request.
+
 ## Disclaimer
 
 This is a research experiment in agent self-improvement. Most trading is
