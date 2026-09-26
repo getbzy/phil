@@ -168,7 +168,10 @@ PY
          "Bash(git rebase --continue)" "Bash(git rebase --abort)"
          "Bash(git rebase --quit)"
          "Bash(git pull:*)")
-  if [ "$PEARL_UP" -eq 1 ]; then
+  # This fork's paper-only quick start must never expose paid mech tools.
+  # Pearl tools are available only during an explicit --real invocation;
+  # config/protected.json independently keeps real trading disabled.
+  if [ "$REAL_MODE" -eq 1 ] && [ "$PEARL_UP" -eq 1 ]; then
     # wallet_info is read-only; the mech_* tools buy predictions from the
     # Olas mech marketplace (~$0.01 USDC each, paid by the service safe) per
     # CYCLE.md step 5a. No other signing tools are exposed.
