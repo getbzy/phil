@@ -4605,6 +4605,23 @@ gate; the hand table is the narrative index. An operator proposal to
 make `reconcile` units-aware and to extend its B-check beyond
 outside-view-veto is filed in journal/proposals.md (2026-09-23 pass).
 
+**2026-09-27 17:15Z (FULL cycle, operator; first `wide-spread-veto`
+settlement of the fresh paper run).** ETH above $2,700 at 16:00Z Sep 27
+settled No. The label was wrong at record time: it was taken from the
+gamma quote 0.73/0.84, but the book recorded with the row was 0.71/0.74,
+so the operative reason was unvalidated-method (a 1.67h lognormal off
+Deribit DVOL 49, spot 2706). The 14:25Z cycle line already says so. The
+label cannot be changed now, because only core writes the journal, so
+this row sits in the wide-spread-veto slice.
+
+| Row | est vs mkt | Side | Realizable edge | Result | CF P&L |
+|---|---|---|---|---|---|
+| ETH >$2,700 Sep27 16:00Z (`0ce56314276b`, wide-spread-veto label, operative unvalidated-method) | 0.65 / 0.725 | No | +0.060 | No | +12.24 |
+
+The fresh-run mechanical ledger (`core/counterfactual.py ledger
+--skip-reason wide-spread-veto`) is now 1 row, 1W/0L, +$12.24, dBrier
+-0.1031. One row is not evidence, and no rule changes.
+
 ## Outside-view-veto relaxation fork (pre-registered, DEEP-2026-09-08, per operator note 2026-09-07 ~20:50Z)
 
 The veto on judgment estimates with claimed edge > 0.10 stays. This fork

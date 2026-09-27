@@ -1,7 +1,7 @@
 {
   "_comment": "Fresh-run pacing state. Every tick settles and monitors; min_full_cycles_per_day prevents indefinite deferral.",
-  "next_full_cycle_after": "2026-09-27T17:00:00Z",
-  "reason": "2026-09-27T16:14Z FULL: pointer advanced to the next tick (reconcile check 4). Not an empty window - JOLTS (Sep 29) and PCE (Sep 30, with BEA annual update) are live, and the Claude Sonnet ladder and quake count settle within 36h, so full cycles continue hourly.",
+  "next_full_cycle_after": "2026-09-27T18:00:00Z",
+  "reason": "2026-09-27T17:15Z FULL: pointer advanced to the next tick (reconcile check 4). Not an empty window - MTN earnings (Sep 28 AMC), JOLTS (Sep 29), PCE (Sep 30) and the Lima vote (Oct 4) are live, so full cycles continue hourly.",
   "min_full_cycles_per_day": 4,
   "watch_items_comment": "Run-specific obligations only. The inherited list is preserved in the author baseline archive.",
   "watch_items": [],
