@@ -1,7 +1,7 @@
 {
   "_comment": "Fresh-run pacing state. Every tick settles and monitors; min_full_cycles_per_day prevents indefinite deferral.",
-  "next_full_cycle_after": null,
-  "reason": "Fresh paper-only run started 2026-09-26; run the first full cycle immediately.",
+  "next_full_cycle_after": "2026-09-27T16:00:00Z",
+  "reason": "2026-09-27T15:13Z FULL: pointer advanced to the next tick (reconcile check 4). Not an empty window - JOLTS (Sep 29) and PCE (Sep 30, with BEA annual update) are live, so full cycles continue hourly; screener reserve lifts 16:00Z.",
   "min_full_cycles_per_day": 4,
   "watch_items_comment": "Run-specific obligations only. The inherited list is preserved in the author baseline archive.",
   "watch_items": [],

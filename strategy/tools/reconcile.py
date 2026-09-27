@@ -211,8 +211,13 @@ def main():
         for line in cycles_path.read_text().splitlines():
             if not line[:4].isdigit() or " cycle done" not in line:
                 continue
-            i = line.find("(FULL cycle")
-            j = line.find("(LIGHT tick")
+            # Bare "(FULL"/"(LIGHT" (fixed 2026-09-27): the fresh run logs
+            # "(FULL, ..." and "(LIGHT via ...", which the old "(FULL cycle"
+            # / "(LIGHT tick" markers never matched, so four FULL cycles
+            # without funnel lines (2026-09-26 19:05Z .. 09-27 12:17Z)
+            # passed this check silently; check 1 caught them via orphans.
+            i = line.find("(FULL")
+            j = line.find("(LIGHT")
             k = line.find("(TRIGGERED")
             markers = [(x, n) for n, x in (("FULL", i), ("LIGHT", j), ("TRIG", k)) if x != -1]
             if not markers or min(markers)[1] != "FULL":
