@@ -1,7 +1,7 @@
 {
   "_comment": "Fresh-run pacing state. Every tick settles and monitors; min_full_cycles_per_day prevents indefinite deferral.",
-  "next_full_cycle_after": "2026-09-27T19:00:00Z",
-  "reason": "2026-09-27T18:16Z FULL: pointer advanced to the next tick (reconcile check 4). Not an empty window - Liquid GF (21:30Z), MTN earnings (Sep 28 AMC), JOLTS (Sep 29), PCE (Sep 30), Quebec (Oct 5) and the Lima vote (Oct 4) are live, so full cycles continue hourly. Screener day cap 150/150 reached; remaining cycles today fall back unscreened.",
+  "next_full_cycle_after": "2026-09-27T20:00:00Z",
+  "reason": "2026-09-27T19:17Z FULL: pointer advanced to the next tick (reconcile check 4). Not an empty window - WTI Sunday reopen 22Z (Sep touch ladder, Trump rejected Iran Hormuz plan Sep26), Liquid GF (21:30Z), MTN earnings (Sep 28 AMC), JOLTS (Sep 29), PCE (Sep 30), Quebec (Oct 5), Lima (Oct 4), Krakow runoff (Oct 11) are live, so full cycles continue hourly. Screener day cap 150/150 reached; remaining cycles today fall back unscreened.",
   "min_full_cycles_per_day": 4,
   "watch_items_comment": "Run-specific obligations only. The inherited list is preserved in the author baseline archive.",
   "watch_items": [],
