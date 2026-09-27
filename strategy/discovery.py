@@ -64,4 +64,14 @@ def queries(now, min_end, horizon, args, protected):
         #    markets currently, so not included — revisit if that changes.)
         {**base, "_label": "econ-tag", "tag_id": 100328, "order": "volume24hr",
          "ascending": "false"},
+
+        # 5. Near-term mechanical releases get their own lane instead of
+        # competing with the full 14-day economy pool. This changes ordering,
+        # not admissibility or betting thresholds: the researcher still has
+        # to prove a reachable benchmark, tight book, and honest edge.
+        {"closed": "false", "_label": "econ-near-term", "tag_id": 100328,
+         "order": "volume24hr", "ascending": "false",
+         "end_date_min": iso(min_end),
+         "end_date_max": iso(min(horizon, now.replace(microsecond=0) +
+                                 __import__("datetime").timedelta(hours=48)))},
     ]
